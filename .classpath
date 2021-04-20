@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/edlir/Downloads/swing-reg/JAR FILES/mysql-connector-java-8.0.13.jar"/>
+	<classpathentry kind="lib" path="JAR FILES/json-20201115.jar"/>
+	<classpathentry kind="lib" path="JAR FILES/jsp-api-2.2.jar"/>
+	<classpathentry kind="lib" path="JAR FILES/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="JAR FILES/mysql-connector-java-8.0.23.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
