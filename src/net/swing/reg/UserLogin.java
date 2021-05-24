@@ -101,21 +101,21 @@ public class UserLogin extends JFrame {
         btnNewButton.setBounds(545, 392, 162, 73);
         btnNewButton.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) 
+			public void actionPerformed(ActionEvent e) 
             {
                 String userName = textField.getText();
-                String password = passwordField.getText();
+                String password = String.valueOf(passwordField.getPassword());
                 try {
-                    Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/swing?serverTimezone=UTC", "root", "root");
+                    Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/swing?serverTimezone=UTC", "root", "qwerty123");
 
                     PreparedStatement st = (PreparedStatement) connection
-                        .prepareStatement("Select user_name, password from account where user_name=? and password=?");
+                        .prepareStatement("Select username, password from account where userName=? and password=?");
 
                     st.setString(1, userName);
                     st.setString(2, password);
                     
                     username_text = textField.getText();
-                    password_text = passwordField.getText();
+                    password_text = String.valueOf(passwordField.getPassword());
                     
                     ResultSet rs = st.executeQuery();
                     if (rs.next()) 

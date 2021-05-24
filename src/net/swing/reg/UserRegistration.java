@@ -3,7 +3,6 @@ package net.swing.reg;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -130,7 +129,8 @@ public class UserRegistration extends JFrame {
         btnNewButton1 = new JButton("Login");
         btnNewButton.addActionListener(new ActionListener() 
         {
-            public void actionPerformed(ActionEvent e) 
+           
+			public void actionPerformed(ActionEvent e) 
             {
                 String firstName = firstname.getText();
                 String lastName = lastname.getText();
@@ -138,7 +138,7 @@ public class UserRegistration extends JFrame {
                 String userName = username.getText();
                 String mobileNumber = mob.getText();
                 int len = mobileNumber.length();
-                String password = passwordField.getText();
+                String password = String.valueOf(passwordField.getPassword());
 
                 String msg = "" + firstName;
                 msg += " \n";
@@ -149,7 +149,7 @@ public class UserRegistration extends JFrame {
 
                 try 
                 {
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/swing?serverTimezone=UTC", "root", "root");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/swing?serverTimezone=UTC", "root", "qwerty123");
 
 
                     String query = "INSERT INTO account values('" + firstName + "','" + lastName + "','" + userName + "','" +

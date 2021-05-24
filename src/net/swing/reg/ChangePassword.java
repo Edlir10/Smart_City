@@ -16,7 +16,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 public class ChangePassword extends JFrame {
@@ -61,14 +60,15 @@ public class ChangePassword extends JFrame {
 
         JButton btnSearch = new JButton("Enter");
         btnSearch.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+          
+			public void actionPerformed(ActionEvent e) {
 
-                String pstr = passField.getText();
+                String pstr = String.valueOf(passField.getPassword());
                 try {
                     System.out.println("Updating the password of " + name);
                     System.out.println("Password updated!");
 
-                    Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/swing?serverTimezone=UTC", "root", "root");
+                    Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/swing?serverTimezone=UTC", "root", "qwerty123");
 
                     PreparedStatement st = (PreparedStatement) con
                         .prepareStatement("Update account set password=? where user_name=?");

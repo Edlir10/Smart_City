@@ -49,12 +49,14 @@ public class Delet extends JFrame
         delete.setFont(new Font("Tahoma", Font.PLAIN, 24));
         delete.setBounds(150,170,200,45);
         delete.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            @SuppressWarnings("static-access")
+			public void actionPerformed(ActionEvent e) {
             
             	UserLogin obj = new UserLogin();
                   
                 String username_delet = usernametext.getText();
-                String password_delet = passwordtext.getText();
+             
+				String password_delet = String.valueOf(passwordtext.getPassword());
 
             	int a = JOptionPane.showConfirmDialog(delete, "Are you sure you want to delete your account?");
                 if (a == JOptionPane.YES_OPTION)
@@ -64,7 +66,7 @@ public class Delet extends JFrame
                 	{
                 		//System.out.println("Account with the username "+username_delet +" and password "+password_delet+"is successfully deleted");
                 		try {
-                            java.sql.Connection connection =  DriverManager.getConnection("jdbc:mysql://localhost:3306/swing?serverTimezone=UTC", "root", "root");
+                            java.sql.Connection connection =  DriverManager.getConnection("jdbc:mysql://localhost:3306/swing?serverTimezone=UTC", "root", "qwerty123");
                             PreparedStatement st = (PreparedStatement) ((java.sql.Connection) connection)
                                     .prepareStatement("DELETE FROM account WHERE user_name = '"+username_delet+"' AND password = '"+password_delet+"';");
                             st.executeUpdate();

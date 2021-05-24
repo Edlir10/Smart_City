@@ -71,7 +71,7 @@ public class Business extends JFrame implements ActionListener
                                 E.printStackTrace();
                             }
                 		case 2:
-                			link = "https://www.glassdoor.com/Explore/top-companies-durrës_IL.14,20_IC2208014.htm";
+                			link = "https://www.glassdoor.com/Explore/top-companies-durrï¿½s_IL.14,20_IC2208014.htm";
                 			try {
                 				Desktop d= Desktop.getDesktop();
                                 URI uri = new URI(link.toString());
@@ -104,7 +104,7 @@ public class Business extends JFrame implements ActionListener
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 }
